@@ -8,10 +8,11 @@ public class Main {
     {
         String dirIntend = getIntend(dirIndent);
 
-        if(index == array.length)
+        if (index == array.length) {
             return;
+        }
 
-        if(array[index].isDirectory())
+        if (array[index].isDirectory())
         {
             System.out.println(dirIntend + "[" + array[index].getName() + "]");
 
@@ -31,5 +32,15 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        String mainDirectoryPath = "/Users/balazsvarga/JavaCodes/Recursive-directory-printer";
+
+        File mainDirectory = new File(mainDirectoryPath);
+
+        if (mainDirectory.exists() && mainDirectory.isDirectory())
+        {
+            File array[] = mainDirectory.listFiles();
+
+            RecursiveDirectoryPrinter(array,0, 0);
+        }
     }
 }
