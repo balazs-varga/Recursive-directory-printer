@@ -6,7 +6,7 @@ public class Main {
 
     static void RecursiveDirectoryPrinter(File[] array, int index, int dirIndent)
     {
-        String dirIntend = " ";
+        String dirIntend = getIntend(dirIndent);
 
         if(index == array.length)
             return;
@@ -19,6 +19,15 @@ public class Main {
         }
 
         RecursiveDirectoryPrinter(array, ++index, dirIndent);
+    }
+
+    private static String getIntend(int intend) {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = 0; i < intend; i++) {
+            stringBuilder.append(" |--");
+        }
+        return stringBuilder.toString();
     }
 
     public static void main(String[] args) {
