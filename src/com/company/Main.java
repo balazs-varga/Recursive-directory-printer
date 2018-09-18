@@ -40,7 +40,7 @@ public class Main {
         {
             File array[] = mainDirectory.listFiles();
 
-            RecursiveDirectoryPrinter(array,0, 0);
+            RecursiveDirectoryPrinter(array, 0, 0);
         }
     }
 }
